@@ -13,5 +13,5 @@ RUN chmod -R g+rw /go/src/jaeger-ui-build
 RUN chgrp -R 0 /go/bin/
 RUN chmod -R g+rwx /go/bin/
 RUN useradd -u 10001 scratchuser
-USER scratchuser
+USER 10001
 CMD ["/go/bin/standalone-linux","--span-storage.type=memory","--query.static-files=/go/src/jaeger-ui-build/build/"]
